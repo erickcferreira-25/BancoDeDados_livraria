@@ -15,23 +15,10 @@ Cada tabela tem seu próprio dump (gerado com `mysqldump`, em 29/10/2026):
 | `livraria_pedido.sql` | `pedido` | 8 |
 | `livraria_item_pedido.sql` | `item_pedido` | 13 |
 
-## Modelo de dados
+## Diagrama
 
-```
-autor ──┐                       cliente
-        ├──< livro >──┐            │
-categoria ┘           │            └──< pedido ──< item_pedido >── livro
-                      └────────────────────────────────┘
-```
+<img width="1395" height="628" alt="image" src="https://github.com/user-attachments/assets/3b62084c-f782-4722-aeb9-b00a2d1d8d2d" />
 
-```mermaid
-erDiagram
-    AUTOR ||--o{ LIVRO : escreve
-    CATEGORIA ||--o{ LIVRO : classifica
-    CLIENTE ||--o{ PEDIDO : realiza
-    PEDIDO ||--|{ ITEM_PEDIDO : contem
-    LIVRO ||--o{ ITEM_PEDIDO : "aparece em"
-```
 
 ### Tabelas
 
